@@ -8,14 +8,9 @@
   <h2><%= pluralize(@article.comments.size, 'comment') %></h2>
 
   <div id="comments">
-  <% for comment in @article.comments %>
-    <div class="comment">
-      <strong><%= link_to_unless comment.url.blank?, h(comment.author), h(comment.url) %></strong>
-      <em>on <%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></em>
-      <%=simple_format comment.content %>
-    </div>
-  <% end %>
+	  <%= render @article.comments %>  
   </div>
+  
 <% end %>
 
 <h3>Add your comment:</h3>

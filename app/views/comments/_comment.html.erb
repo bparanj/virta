@@ -1,0 +1,5 @@
+<div class="comment">
+  <strong><%= link_to_unless comment.url.blank?, h(comment.author), h(comment.url) %></strong>
+  <em>on <%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></em>
+  <%=simple_format comment.content %>
+</div>
